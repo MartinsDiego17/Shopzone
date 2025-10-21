@@ -5,6 +5,8 @@ export const purchaseTicket = async (items) => {
 
     const formated_items = [];
 
+    if(!Array.isArray(items)) items = [items];
+
     items.forEach(pro => {
 
         const { title, price } = pro;

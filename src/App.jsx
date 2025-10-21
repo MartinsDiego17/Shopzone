@@ -13,6 +13,8 @@ import { Detail } from "./pages/Detail";
 import { ModalCart } from "./components/ModalCart/ModalCart";
 import { InitMercadoPago } from "./components/InitMercadoPago/InitMercadoPago";
 import { purchaseTicket } from "./utils/mercadopago/purchase_ticket";
+import { set_is_buyer } from "./utils/buyer/set_is_buyer";
+import { DataBuy } from "./pages/DataBuy";
 
 function App() {
 
@@ -57,7 +59,8 @@ function App() {
   const handle_purchase_product = async (products) => {
     try {
       const response = await purchaseTicket(products);
-      window.location.href = response.init_point; 
+      if (response.init_point) set_is_buyer(response.id);
+      window.location.href = response.init_point;
     } catch (error) {
       throw new Error(error.message);
     }
@@ -88,6 +91,9 @@ function App() {
           <Route path="/product/:id" element={
             <Detail handle_set_item_storage={handle_set_item_storage} handle_purchase={handle_purchase_product} />
           } />
+
+          <Route path="/statusbuy/:status" Component={DataBuy} />
+
         </Routes>
 
         <ModalCart isOpen={openModalCart} textModal={textModal} />
