@@ -1,11 +1,12 @@
 import { Preference } from "mercadopago";
-import { client } from "../create_preference/preference.js";
-import { getEnv } from "../utils/get_env.js";
+import { client } from "../../../server/create_preference/preference.js";
+
+const local_process = process.env;
 
 const local_urls = {
-    success_url: getEnv("PROD_SUCCESS_URL"),
-    failure_url: getEnv("PROD_FAILURE_URL"),
-    pending_url: getEnv("PROD_PENDING_URL")
+    success_url: local_process.PROD_SUCCESS_URL,
+    failure_url: local_process.PROD_FAILURE_URL,
+    pending_url: local_process.PROD_PENDING_URL
 };
 
 const { success_url, failure_url, pending_url } = local_urls;
@@ -26,7 +27,7 @@ export const createPreference = async (req) => {
                 },
                 auto_return: "approved"
             }
-        })  
+        })
 
         return response;
     } catch (error) {

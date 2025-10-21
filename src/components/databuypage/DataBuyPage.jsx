@@ -17,8 +17,8 @@ export const DataBuyPage = () => {
     useEffect(() => {
 
         const local_data = get_data_purchase();
+
         if (!local_data.isBuyer) navigate("/");
-        console.log("LOCAL-DATA-PURCHASE: ", local_data);
         setLocalDataPurchase(local_data);
 
     }, []);

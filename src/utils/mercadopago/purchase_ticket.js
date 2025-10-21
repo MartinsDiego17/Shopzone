@@ -1,28 +1,34 @@
-import axios from "axios";
-
 export const purchaseTicket = async (items) => {
-    const url = import.meta.env.VITE_PROD_API_URL + "/api/mercadopago/create_preference";
+  const formatted_items = [];
 
-    const formated_items = [];
+  if (!Array.isArray(items)) items = [items];
 
-    if(!Array.isArray(items)) items = [items];
-
-    items.forEach(pro => {
-
-        const { title, price } = pro;
-
-        formated_items.push({
-            title,
-            quantity: 1,
-            unit_price: (price + 1.3) * 0.01
-        })
+  items.forEach((pro) => {
+    const { title, price } = pro;
+    formatted_items.push({
+      title,
+      quantity: 1,
+      unit_price: (price + 1.3) * 0.01,
     });
+  });
 
-    try {
-        const { data } = await axios.post(url, { items: formated_items });
-        return data;
-    } catch (error) {
-        console.error("Error al crear preferencia:", error);
-        throw error;
+  try {
+    const response = await fetch("/.netlify/functions/create_preference", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items: formatted_items }),
+    });
+    
+    
+    if (!response.ok) {
+      throw new Error(`Error HTTP: ${response.status}`);
     }
+    
+    const data = await response.json(); // 👈 se convierte correctamente a JSON
+    console.log("RESPONSE: ", data);
+    return data;
+  } catch (error) {
+    console.error("Error al crear preferencia:", error);
+    throw error;
+  }
 };
