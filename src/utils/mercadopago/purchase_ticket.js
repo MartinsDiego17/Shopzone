@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const purchaseTicket = async (items) => {
-    const url = import.meta.env.VITE_API_URL + "/api/mercadopago/create_preference";
+    const url = import.meta.env.VITE_PROD_API_URL + "/api/mercadopago/create_preference";
 
     const formated_items = [];
 
