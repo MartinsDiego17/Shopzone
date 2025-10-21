@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router";
 import "./databuy.css";
 import { useEffect, useState } from "react";
-/* import { get_data_purchase } from "../../utils/buyer/get_data_purchase"; */
+import { get_data_purchase } from "../../utils/buyer/get_data_purchase";
 
 export const DataBuyPage = () => {
 
@@ -16,13 +16,7 @@ export const DataBuyPage = () => {
 
     useEffect(() => {
 
-/*         const local_data = get_data_purchase(); */
-
-        const local_data = {
-            buyId: 25,
-            isBuyer: true,
-            dateBuy: "21/10/25"
-        }
+        const local_data = get_data_purchase();
 
         if (!local_data.isBuyer) navigate("/");
         setLocalDataPurchase(local_data);
