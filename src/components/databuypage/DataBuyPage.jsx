@@ -1,13 +1,9 @@
 import { useParams, useNavigate } from "react-router";
 import "./databuy.css";
 import { useEffect, useState } from "react";
-import { get_data_purchase } from "../../utils/buyer/get_data_purchase";
+/* import { get_data_purchase } from "../../utils/buyer/get_data_purchase"; */
 
 export const DataBuyPage = () => {
-
-        return (
-            <h1>hola mundo</h1>
-        )
 
     const { status } = useParams();
     const navigate = useNavigate();
