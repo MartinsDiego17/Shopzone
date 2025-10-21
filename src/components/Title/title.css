@@ -1,0 +1,11 @@
+h1.title-text {
+    color: white;
+    text-align: center;
+    margin: 0;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}

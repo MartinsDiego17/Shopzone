@@ -1,0 +1,75 @@
+.modal-cart-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    pointer-events: none;
+}
+
+
+.modal-cart-container .card-modal {
+    width: fit-content;
+    background-color: blue;
+    margin-right: 5%;
+    margin-bottom: 5%;
+
+    animation-name: show-card;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    display: flex;
+    justify-content: center;
+    border: solid 2px transparent;
+    align-items: center;
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+
+.card-modal.success {
+    background-color: var(--bg-body);
+    color: var(--text);
+    border-color: var(--fluor);
+    box-shadow: 0px 10px 100px var(--dark-text);
+}
+
+@keyframes show-card {
+    0% {
+        transform: translateY(50px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+}
+
+.card-modal .icon-modal {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.card-modal.success .icon-modal {
+    color: var(--fluor);
+}
+
+.card-modal.failure .icon-modal {
+    color: red;
+}
+
+.card-modal p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.card-modal.failure {
+    background-color: #1f0000;
+    color: #ffdddd;
+    border-color: red;
+    box-shadow: 0px 10px 100px #3d0000;
+}

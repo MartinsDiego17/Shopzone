@@ -1,0 +1,32 @@
+.footer-container {
+    height: 30vh;
+    width: 100vw;
+    background: linear-gradient(transparent, var(--bg-body), var(--bg-body), var(--bg-body));
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+.footer-container hr {
+    width: 100%;
+    opacity: .2;
+}
+
+.footer-container p {
+    color: #ccc;
+    text-align: center;
+    line-height: 1.3;
+    padding-top: 20px;
+}
+
+.footer-container .email {
+    padding-top: 0;
+}
+
+.footer-container .title-text {
+    font-size: 2.5rem;
+    margin-bottom: 1%;
+}

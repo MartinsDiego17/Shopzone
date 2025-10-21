@@ -1,0 +1,93 @@
+.card-container {
+    border-bottom: solid 2px transparent;
+    transition: transform 0.4s ease, border-color 0.2s ease;
+    transform-origin: top center;
+    perspective: 1000px;
+    animation: reveal ease-in-out both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
+}
+
+.card-container:hover {
+    border-color: white;
+    transform: rotateY(10deg);
+}
+
+.card-container img {
+    width: 250px;
+    border-radius: 10px;
+    height: 250px;
+}
+
+.card-container h3 {
+    color: white;
+}
+
+.card-container p {
+    color: #ccc;
+}
+
+.card-container h5 {
+    color: green;
+    font-size: 1.1rem;
+}
+
+
+.card-container {
+    animation: reveal ease-in-out both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        translate: 0 100px;
+    }
+
+    100% {
+        translate: 0 0;
+        opacity: 1;
+    }
+}
+
+.card-container .price-and-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-container .cart-icon {
+    display: block;
+    width: 30px;
+    opacity: 0;
+    height: 30px;
+    color: inherit;
+}
+
+.card-container:hover .cart-icon {
+    opacity: 1;
+}
+
+.card-container button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+    color: white;
+}
+
+.card-container button:hover {
+    color: var(--fluor);
+    transform: scale(1.1);
+}
+
+.card-container button:active {
+    transform: scale(.9);
+}
+
+.card-container button[disabled] {
+    opacity: 0.2;
+    cursor: no-drop;
+}
