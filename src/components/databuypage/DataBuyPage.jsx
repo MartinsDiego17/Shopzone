@@ -16,7 +16,13 @@ export const DataBuyPage = () => {
 
     useEffect(() => {
 
-        const local_data = get_data_purchase();
+/*         const local_data = get_data_purchase(); */
+
+        const local_data = {
+            buyId: 25,
+            isBuyer: true,
+            dateBuy: "21/10/25"
+        }
 
         if (!local_data.isBuyer) navigate("/");
         setLocalDataPurchase(local_data);
