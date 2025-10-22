@@ -6,15 +6,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Cart } from "./pages/Cart";
 import { useEffect, useState } from "react";
-import { set_product_storage } from "./utils/set_product_storage";
-import { get_storage } from "./utils/get_storage";
-import { delete_product_storage } from "./utils/delete_product_storage";
+import { set_product_storage } from "./utils/cart_storage/set_product_storage";
+import { get_storage } from "./utils/cart_storage/get_storage";
+import { delete_product_storage } from "./utils/cart_storage/delete_product_storage";
 import { Detail } from "./pages/Detail";
 import { ModalCart } from "./components/ModalCart/ModalCart";
 import { InitMercadoPago } from "./components/InitMercadoPago/InitMercadoPago";
 import { purchaseTicket } from "./utils/mercadopago/purchase_ticket";
 import { set_is_buyer } from "./utils/buyer/set_is_buyer";
 import { DataBuy } from "./pages/DataBuy";
+import { NotFound } from "./pages/NotFound";
 
 function App() {
 
@@ -93,6 +94,8 @@ function App() {
           } />
 
           <Route path="/statusbuy/:status" Component={DataBuy} />
+
+          <Route path="*"  Component={NotFound} />
 
         </Routes>
 

@@ -1,3 +1,5 @@
+import { clean_storage } from "../cart_storage/clean_storage.js";
+
 export const purchaseTicket = async (items) => {
   const formatted_items = [];
 
@@ -19,13 +21,14 @@ export const purchaseTicket = async (items) => {
       body: JSON.stringify({ items: formatted_items }),
     });
     
-    
     if (!response.ok) {
       throw new Error(`Error HTTP: ${response.status}`);
     }
     
-    const data = await response.json(); // 👈 se convierte correctamente a JSON
-    console.log("RESPONSE: ", data);
+    const data = await response.json(); 
+
+    if(items.length > 1) clean_storage();
+
     return data;
   } catch (error) {
     console.error("Error al crear preferencia:", error);

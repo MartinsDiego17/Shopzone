@@ -1,8 +1,8 @@
 import { useEffect, useState, useRef } from "react";
-import { filter_products } from "../utils/filter_products";
-import { fetch_products } from "../utils/fetch_products";
-import { category_products } from "../utils/category_products";
-import { order_products } from "../utils/order_products";
+import { filter_products } from "../utils/management_products/filter_products";
+import { fetch_products } from "../utils/management_products/fetch_products";
+import { category_products } from "../utils/management_products/category_products";
+import { order_products } from "../utils/management_products/order_products";
 
 import { Presentation } from "../components/presentation/Presentation";
 import { Products } from "../components/products/Products";

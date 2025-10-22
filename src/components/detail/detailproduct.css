@@ -92,3 +92,32 @@
     opacity: .3;
     cursor: no-drop;
 }
+
+.product-not-found {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.product-not-found button {
+    outline: none;
+    border: none;
+    background-color: var(--text);
+    border-radius: 50px;
+    color: var(--dark-text);
+    padding: 15px 100px;
+    margin-bottom: 20px;
+    transition: .2s;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.product-not-found button:hover {
+    box-shadow: 0px 0px 100px var(--dark-text);
+    padding: 15px 130px;
+}
