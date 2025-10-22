@@ -7,6 +7,7 @@ export const set_is_buyer = (purchase_id) => {
         buyId: purchase_id,
         isBuyer: true,
         dateBuy,
+        statusBuy: "success"
     };
 
     localStorage.setItem("purchase", JSON.stringify(purchaseData));

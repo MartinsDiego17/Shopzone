@@ -1,22 +1,40 @@
-import { useParams, useNavigate  } from "react-router";
+import { useParams, useNavigate, useLocation } from "react-router";
 import "./databuy.css";
 import { useEffect, useState } from "react";
 import { get_data_purchase } from "../../utils/buyer/get_data_purchase";
+import { set_status_buy } from "../../utils/buyer/set_status_buy";
 
 export const DataBuyPage = () => {
 
     const { status } = useParams();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [localStatus, setLocalStatus] = useState("");
     const [localDataPurchase, setLocalDataPurchase] = useState({
         buyId: 0,
         isBuyer: false,
-        dateBuy: ""
+        dateBuy: "",
+        statusBuy: ""
     })
 
     useEffect(() => {
+        let current_status = "";
+
+        if (location.pathname.includes("collection_id")) {
+            if (location.pathname.includes("success")) current_status = "success";
+            else if (location.pathname.includes("failure")) current_status = "failure";
+            else if (location.pathname.includes("pending")) current_status = "pending";
+            else navigate("/")
+            set_status_buy(current_status);
+        }
+
+    }, []);
+
+    useEffect(() => {
         const local_data = get_data_purchase();
+        const { statusBuy } = local_data;
+        if(statusBuy !== status) navigate("/");
 
         if (!local_data.isBuyer) navigate("/");
         setLocalDataPurchase(local_data);
