@@ -30,3 +30,11 @@
     font-size: 2.5rem;
     margin-bottom: 1%;
 }
+
+
+.footer-container p a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    border-bottom: solid 1px var(--text);
+}
