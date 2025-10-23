@@ -19,9 +19,10 @@ export const Products = ({ handle_search, handle_category, handle_order, list, h
         <div className="products-container">
             <h1 id="productos">NUESTROS PRODUCTOS</h1>
             <section className="options-products">
+
                 <article className="filters-and-orders">
                     <input value={valueSearch} onChange={handle_search} placeholder="Remera negra, auriculares..." />
-                    <div>
+                    <div className="selector-functions">
                         <select onChange={handle_category}>
                             {
                                 categorias.map(category => {

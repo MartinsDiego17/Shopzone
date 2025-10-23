@@ -91,3 +91,11 @@
     opacity: 0.2;
     cursor: no-drop;
 }
+
+@media (max-width:360px ){
+
+    .card-container img {
+        width: 250px;
+        height: 250px;
+    }
+}

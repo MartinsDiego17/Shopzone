@@ -24,3 +24,25 @@
     text-decoration: none;
     color: inherit;
 }
+
+
+.link-cart-responsive {
+    display: none;
+}
+
+@media(max-width: 360px) {
+    .link-cart-responsive {
+        display: block;
+        background-color: transparent;
+        border: none;
+    }
+    .link-cart-responsive svg {
+        display: block;
+        color: #ccc;
+        width: 25px;
+        height: 25px;
+    }
+    .list-sections {
+        display: none;
+    }
+}

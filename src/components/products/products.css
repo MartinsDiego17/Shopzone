@@ -95,3 +95,23 @@
     color: var(--text);
     margin: 0 auto;
 }
+
+@media (max-width:360px) {
+    .filters-and-orders {
+        flex-direction: column;
+        row-gap: 50px;
+    }
+
+    .filters-and-orders input {
+        min-width: 100%;
+    }
+
+    .filters-and-orders div.selector-functions {
+        column-gap: 40px;
+    }
+
+    .card-grids {
+        grid-template-columns: 250px;
+    }
+
+}

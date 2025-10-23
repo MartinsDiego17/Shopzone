@@ -41,3 +41,9 @@
         color: var(--fluor);
     }
 }
+
+@media (max-width:360px) {
+    .footer-container .link-cart-responsive {
+        display: none;
+    }
+}

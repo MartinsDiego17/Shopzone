@@ -31,4 +31,9 @@ header {
     }
 }
 
-
+@media (max-width: 360px) {
+    header {
+        flex-direction: row;
+        column-gap: 20%;
+    }
+}

@@ -9,7 +9,7 @@
     width: 70vw;
     backdrop-filter: blur(20px);
     padding: 30px;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     height: 80vh;
 }
 
@@ -120,4 +120,46 @@
 .product-not-found button:hover {
     box-shadow: 0px 0px 100px var(--dark-text);
     padding: 15px 130px;
+}
+
+@media (max-width:360px) {
+    .product-detail-container {
+        min-height: 150vh;
+    }
+
+    .product-detail-container section {
+        flex-direction: column;
+        min-height: fit-content;
+    }
+
+    .product-detail-container section .image-detail,
+    .product-detail-container section .description-detail {
+        width: 100%;
+    }
+
+    .product-detail-container section .description-detail {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product-detail-container section .description-detail h1 {
+        font-size: 1.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .product-detail-container section .description-detail p {
+        max-width: 100%;
+        text-align: center;
+        width: 100%;
+    }
+
+    .product-detail-container section .description-detail h3 {
+        font-size: 2rem;
+    }
+
+    .product-detail-container section .description-detail button {
+        width: 100%;
+    }
+
 }
