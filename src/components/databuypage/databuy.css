@@ -87,3 +87,29 @@
     column-gap: 20px;
     opacity: 1;
 }
+
+@media (max-width: 360px) {
+
+    .status-buy-container {
+        padding: 50px 0;
+    }
+
+    .status-buy-container .blurred {
+        border-radius: 0;
+    }
+    .status-buy-container .blurred h1 {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+    .status-buy-container .blurred h3 {
+        flex-direction: column;
+        row-gap: 10px;
+        margin-bottom: 40px;
+    }
+    .status-buy-container .blurred h3 span {
+        text-align: center;
+    }
+    .status-buy-container .blurred button {
+        margin: 0 auto;
+    }
+}

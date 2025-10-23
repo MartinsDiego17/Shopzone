@@ -150,6 +150,7 @@
 
     .product-detail-container section .description-detail p {
         max-width: 100%;
+        overflow: hidden;
         text-align: center;
         width: 100%;
     }
@@ -160,6 +161,16 @@
 
     .product-detail-container section .description-detail button {
         width: 100%;
+    }
+
+    .product-not-found h1 {
+        text-align: center;
+        font-size: 1.3rem;
+        text-wrap: balance;
+    }
+
+    .product-not-found button {
+        padding: 15px 50px;
     }
 
 }

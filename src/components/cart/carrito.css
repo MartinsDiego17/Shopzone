@@ -264,3 +264,105 @@
 .detail-storage-container button:hover {
     box-shadow: 0px 0px 100px var(--dark-text);
 }
+
+.card-storage-container .text-mobile {
+    display: none;
+}
+
+.card-storage-container .button-delete-item-storage {
+    display: none;
+}
+
+@media (max-width: 360px) {
+
+    .carrito {
+        margin-top: 20vh;
+        height: fit-content;
+    }
+
+    .carrito-container {
+        padding-bottom: 5vh;
+    }
+
+    .carrito-container .cards-and-details {
+        flex-direction: column;
+    }
+
+    .carrito-container .cards-storage {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .card-storage-container:last-child {
+        margin-bottom: 50px;
+    }
+
+    .carrito-container .detail-storage-container {
+        width: 100%;
+    }
+
+    .carrito-container .cards-storage .card-storage-container h5 {
+        display: none;
+        font-size: .7rem;
+    }
+
+    .carrito-container .cards-storage .card-storage-container h5.text-mobile {
+        display: block;
+        width: 100%;
+    }
+
+    .carrito-container .detail-storage-container h2 {
+        font-size: 1.3rem;
+    }
+
+    .carrito-container .card-storage-container {
+        padding-right: 2%;
+        min-height: fit-content;
+        flex-direction: column;
+    }
+
+    .carrito-container .card-storage-container img {
+        width: 50%;
+        overflow: hidden;
+    }
+
+    .carrito-container .card-storage-container .product-detail {
+        column-gap: 10px;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .card-storage-container .delete {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .carrito-container .card-storage-container .delete .button-trash-icon {
+        display: none;
+    }
+    .carrito-container .card-storage-container .delete .button-delete-item-storage {
+        display: block;
+        width: fit-content;
+        color: red;
+    }
+
+    .carrito-container .empty-cart span{
+        margin-top: 50px;
+        width: 50%;
+        height: 50%;
+    }
+
+    .carrito-container .empty-cart h2 {
+        font-size: 1.2rem;
+    }
+
+    .carrito-container .empty-cart a  {
+        margin: 0 auto;
+    }
+
+    .carrito .empty-cart a button {
+        padding: 10px 40px;
+    }
+
+}
