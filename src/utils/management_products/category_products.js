@@ -1,49 +1,19 @@
-export const categories_en = [
-    "men's clothing",
-    "women's clothing",
-    "jewelery",
-    "electronics"
-];
+import { converse_category } from "./converse_category";
+import { order_products } from "./order_products";
 
-export const categories_es = [
-    "Ropa de hombre",
-    "Ropa de mujer",
-    "Joyería",
-    "Electrónica"
-];
+export const category_products = (list, category, currentOrder) => {
 
-
-export const category_products = (list, category) => {
-
-    let final_category = "";
-
-    switch (category) {
-        case categories_es[0]:
-            final_category = categories_en[0];
-            break;
-
-        case categories_es[1]:
-            final_category = categories_en[1];
-            break;
-
-        case categories_es[2]:
-            final_category = categories_en[2];
-            break;
-
-        case categories_es[3]:
-            final_category = categories_en[3];
-            break;
-
-        case "Todas":
-            return list;
-
-        default:
-            final_category = "Categoría no encontrada";
-            break;
-    }
-
+    const final_category = converse_category(category);
     const filtered_products = list.filter(product => product.category.toLowerCase() === final_category.toLowerCase());
-    return filtered_products;
+
+    if (currentOrder === "sin orden") {
+        if (category === "Todas") return list;
+        return filtered_products;
+    }
+    else {
+        const ordered_products = order_products(filtered_products, currentOrder, category);
+        return ordered_products;
+    }
 
 
 };

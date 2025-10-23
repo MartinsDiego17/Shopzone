@@ -95,7 +95,7 @@ function App() {
 
           <Route path="/statusbuy/:status" Component={DataBuy} />
 
-          <Route path="*"  Component={NotFound} />
+          <Route path="*" Component={NotFound} />
 
         </Routes>
 

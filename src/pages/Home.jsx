@@ -13,6 +13,12 @@ export const Home = ({ handle_set_item_storage }) => {
   const [allProducts, setAllProducts] = useState([]);
   const [localeProducts, setLocaleProducts] = useState([]);
   const timeoutRef = useRef(null);
+  /* 
+    const [currentSearch, setCurrentSearch] = useState(""); */
+  const [currentCategory, setCurrentCategory] = useState("Todas");
+  const [currentOrder, setCurrentOrder] = useState("sin orden");
+
+  const [valueSearch, setValueSearch] = useState("");
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -26,27 +32,49 @@ export const Home = ({ handle_set_item_storage }) => {
   }, []);
 
   const handle_search = (event) => {
+
     const { value } = event.target;
+    setValueSearch(value);
 
     clearTimeout(timeoutRef.current);
 
     clearTimeout();
     timeoutRef.current = setTimeout(() => {
-      const filtered = filter_products(allProducts, value);
+      const filtered = filter_products(allProducts, value, currentCategory, currentOrder);
       setLocaleProducts(filtered);
     }, 500);
   };
+
   const handle_category = (event) => {
 
-    const category = event.target.value;
+    if (valueSearch.length) setValueSearch("");
 
-    const filtered = category_products(allProducts, category);
+    const category = event.target.value;
+    setCurrentCategory(category);
+
+    if (category === "Todas") {
+      setLocaleProducts(allProducts);
+      return;
+    }
+
+    const filtered = category_products(allProducts, category, currentOrder);
     setLocaleProducts(filtered);
   };
-  const handle_order = (event) => {
-    const operator = event.target.value;
 
-    const ordered = order_products(allProducts, operator);
+  const handle_order = (event) => {
+
+    const operator = event.target.value;
+    setCurrentOrder(operator);
+    const final_list_products = valueSearch.length ? localeProducts : allProducts;
+
+    if (operator === "sin orden") {
+      if(currentCategory !== "Todas") return;
+      setLocaleProducts(final_list_products);
+      setCurrentOrder("sin orden");
+      return;
+    }
+
+    const ordered = order_products(final_list_products, operator, currentCategory);
     setLocaleProducts(ordered);
   };
 
@@ -59,6 +87,7 @@ export const Home = ({ handle_set_item_storage }) => {
         handle_order={handle_order}
         list={localeProducts}
         handle_set_item_storage={handle_set_item_storage}
+        valueSearch={valueSearch}
       />
     </div>
   )

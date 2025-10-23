@@ -3,7 +3,7 @@ import { categorias } from "../../const/filters-orders";
 import { CardProduct } from "../CardProduct/CardProduct";
 import "./products.css";
 
-export const Products = ({ handle_search, handle_category, handle_order, list, handle_set_item_storage }) => {
+export const Products = ({ handle_search, handle_category, handle_order, list, handle_set_item_storage, valueSearch }) => {
 
     const [isDisabled, setIsDisabled] = useState(false);
 
@@ -20,7 +20,7 @@ export const Products = ({ handle_search, handle_category, handle_order, list, h
             <h1 id="productos">NUESTROS PRODUCTOS</h1>
             <section className="options-products">
                 <article className="filters-and-orders">
-                    <input onChange={handle_search} placeholder="Remera negra, auriculares..." />
+                    <input value={valueSearch} onChange={handle_search} placeholder="Remera negra, auriculares..." />
                     <div>
                         <select onChange={handle_category}>
                             {
@@ -35,6 +35,7 @@ export const Products = ({ handle_search, handle_category, handle_order, list, h
                             }
                         </select>
                         <select onChange={handle_order}>
+                            <option value="sin orden">Sin orden</option>
                             <option value="barato">Más barato</option>
                             <option value="caro">Más caro</option>
                         </select>

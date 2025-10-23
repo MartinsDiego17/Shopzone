@@ -34,9 +34,8 @@ export const DataBuyPage = () => {
     useEffect(() => {
         const local_data = get_data_purchase();
         const { statusBuy } = local_data;
-        if(statusBuy !== status) navigate("/");
 
-        if (!local_data.isBuyer) navigate("/");
+        if (!local_data.isBuyer || statusBuy !== status) navigate("/");
         setLocalDataPurchase(local_data);
 
     }, []);

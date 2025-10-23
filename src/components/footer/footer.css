@@ -36,5 +36,8 @@
     text-decoration: none;
     color: var(--text);
     font-weight: 600;
-    border-bottom: solid 1px var(--text);
+    transition: .2s;
+    &:hover {
+        color: var(--fluor);
+    }
 }
