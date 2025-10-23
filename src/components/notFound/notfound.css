@@ -27,7 +27,7 @@
     padding: 15px 130px;
 }
 
-@media (max-width:360px) {
+@media (max-width:430px) {
     .not-found-container h1 {
         text-align: center;
         font-size: 1.3rem;

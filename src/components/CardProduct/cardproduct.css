@@ -92,7 +92,7 @@
     cursor: no-drop;
 }
 
-@media (max-width:360px ){
+@media (max-width:430px ){
 
     .card-container img {
         width: 250px;
