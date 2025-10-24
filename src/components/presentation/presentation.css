@@ -73,7 +73,7 @@ section .cta-data button {
     border: none;
     outline: none;
     padding: 15px 60px;
-    border-radius: 30px;
+    border-radius: 60px;
     font-weight: bold;
     background-color: var(--text);
     font-size: 1rem;
@@ -105,6 +105,47 @@ section a {
     text-decoration: none;
 }
 
+
+
+
+@media (max-width: 1024px) and (max-height:768px) {
+    section.presentation-container {
+        padding-top: 50px;
+        align-items: flex-start;
+    }
+
+    .presentation-container .cta-data h2 {
+        font-size: 3rem;
+    }
+    .presentation-container .cta-data h2 span:last-child {
+        font-size: 4rem;
+    }
+    .presentation-container .cta-data button {
+        font-size: 1rem;
+        padding: 15px 100px;
+    }
+    .presentation-container .svg-hero {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    section.presentation-container {
+        flex-direction: column;
+    }
+    section.presentation-container article {
+        align-items: center;
+        width: 100%;
+    }
+    section.presentation-container article h2 {
+        text-align: center;
+    }
+    section.presentation-container article p{
+        text-align: center;
+    }
+}
+
 @media (max-width: 430px) {
     section.presentation-container {
         flex-direction: column;
@@ -112,12 +153,13 @@ section a {
         align-items: center;
     }
 
-    section .cta-data h2 {
-        font-size: 2rem;
+    section.presentation-container .cta-data h2 {
         text-align: center;
+        font-size: 2rem;
     }
 
-    section .cta-data h2 span:last-child {
+    section.presentation-container .cta-data h2 span:last-child {
+        text-wrap: balance;
         font-size: 2.5rem;
     }
 
@@ -132,7 +174,7 @@ section a {
         text-align: center;
     }
 
-    section .cta-data button {
+    section.presentation-container .cta-data button {
         font-size: .8rem;
         padding: 10px 40px;
     }
@@ -142,6 +184,7 @@ section a {
         padding-top: 70px;
         min-height: 0;
     }
+
     .svg-hero img {
         max-height: fit-content;
     }

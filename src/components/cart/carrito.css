@@ -366,3 +366,9 @@
     }
 
 }
+
+@media (max-width: 1024px) {
+    .carrito-container {
+        height: 50vh;
+    }
+}
