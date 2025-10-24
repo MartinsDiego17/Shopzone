@@ -6,9 +6,13 @@ export const CardProduct = ({ product, handle_set_item_storage, isDisabled }) =>
 
     const { title, image, price, description } = product;
 
+    const handle_scroll = () => {
+        window.scrollTo(0,0);
+    };
+
     return (
         <div id="card" className="card-container">
-            <Link to={`/product/${product.id}`}>
+            <Link onClick={handle_scroll} to={`/product/${product.id}`}>
                 <img src={image} alt={title} />
             </Link>
             <h3>{title.slice(0, 20)}</h3>
